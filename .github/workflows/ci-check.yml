@@ -12,13 +12,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          repo-token: ${{ secrets.TEST_ACTION_GH_PAT}}
+          repo-token: ${{ secrets.GH_REPO_CONFIG}}
       - name: Read description
         id: read
         uses: ./ # Uses an action in the root directory
         with:
           input-file: integration-manifest.json
-          repo-token: ${{ secrets.TEST_ACTION_GH_PAT}}
+          repo-token: ${{ secrets.GH_REPO_CONFIG}}
       - name: Display type
         id: display
         run: |
